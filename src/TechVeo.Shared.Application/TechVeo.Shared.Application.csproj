@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8</TargetFramework>
+    <Nullable>enable</Nullable>
+    
+    <!-- NuGet Package Properties -->
+    <PackageId>TechVeo.Shared.Application</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>TechChallenge-Team</Authors>
+    <Company>TechChallenge</Company>
+    <Description>TechVeo Shared Application - Exceções, extensões e recursos de aplicação compartilhados</Description>
+    <PackageTags>TechVeo;application;shared;exceptions</PackageTags>
+    <RepositoryUrl>https://github.com/TechChallenge-Team/TechVeo-shared</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.1.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.1.2" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\TechVeo.Shared.Domain\TechVeo.Shared.Domain.csproj" />
+	</ItemGroup>
+
+</Project>

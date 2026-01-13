@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8</TargetFramework>
+    <Nullable>enable</Nullable>
+    
+    <!-- NuGet Package Properties -->
+    <PackageId>TechVeo.Shared.Worker</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>TechChallenge-Team</Authors>
+    <Company>TechChallenge</Company>
+    <Description>TechVeo Shared Worker - Recursos de worker compartilhados</Description>
+    <PackageTags>TechVeo;worker;shared</PackageTags>
+    <RepositoryUrl>https://github.com/TechChallenge-Team/TechVeo-shared</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TechVeo.Shared.Infra\TechVeo.Shared.Infra.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,9 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace TechVeo.Shared.Domain.Events;
+
+public interface IDomainEventStore
+{
+    Task<IEnumerable<IDomainEvent>> GetDomainEventsAsync();
+}

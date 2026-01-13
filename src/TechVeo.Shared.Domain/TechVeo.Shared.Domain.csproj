@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8</TargetFramework>
+    <Nullable>enable</Nullable>
+    
+    <!-- NuGet Package Properties -->
+    <PackageId>TechVeo.Shared.Domain</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>TechChallenge-Team</Authors>
+    <Company>TechChallenge</Company>
+    <Description>TechVeo Shared Domain - Entidades, validações e objetos de valor compartilhados</Description>
+    <PackageTags>TechVeo;domain;ddd;shared</PackageTags>
+    <RepositoryUrl>https://github.com/TechChallenge-Team/TechVeo-shared</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>
