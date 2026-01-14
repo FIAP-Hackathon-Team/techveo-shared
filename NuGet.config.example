@@ -5,8 +5,8 @@
     <!-- NuGet oficial -->
     <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3" />
     
-    <!-- GitHub Packages do TechChallenge-Team -->
-    <add key="github" value="https://nuget.pkg.github.com/TechChallenge-Team/index.json" />
+    <!-- GitHub Packages do FIAP-Hackathon-Team -->
+    <add key="github" value="https://nuget.pkg.github.com/FIAP-Hackathon-Team/index.json" />
   </packageSources>
   
   <packageSourceCredentials>

@@ -8,11 +8,11 @@
     <!-- NuGet Package Properties -->
     <PackageId>TechVeo.Shared.Presentation</PackageId>
     <Version>1.0.0</Version>
-    <Authors>TechChallenge-Team</Authors>
-    <Company>TechChallenge</Company>
+    <Authors>FIAP-Hackathon-Team</Authors>
+    <Company>FIAP-Hackathon-Team</Company>
     <Description>TechVeo Shared Presentation - Extensões, filtros e configurações para camada de apresentação compartilhadas</Description>
     <PackageTags>TechVeo;presentation;aspnetcore;shared;swagger</PackageTags>
-    <RepositoryUrl>https://github.com/TechChallenge-Team/TechVeo-shared</RepositoryUrl>
+    <RepositoryUrl>https://github.com/FIAP-Hackathon-Team/TechVeo-shared</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>

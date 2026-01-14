@@ -7,11 +7,11 @@
     <!-- NuGet Package Properties -->
     <PackageId>TechVeo.Shared.Domain</PackageId>
     <Version>1.0.0</Version>
-    <Authors>TechChallenge-Team</Authors>
-    <Company>TechChallenge</Company>
+    <Authors>FIAP-Hackathon-Team</Authors>
+    <Company>FIAP-Hackathon-Team</Company>
     <Description>TechVeo Shared Domain - Entidades, validações e objetos de valor compartilhados</Description>
     <PackageTags>TechVeo;domain;ddd;shared</PackageTags>
-    <RepositoryUrl>https://github.com/TechChallenge-Team/TechVeo-shared</RepositoryUrl>
+    <RepositoryUrl>https://github.com/FIAP-Hackathon-Team/TechVeo-shared</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>

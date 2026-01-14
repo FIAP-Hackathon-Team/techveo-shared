@@ -7,11 +7,11 @@
     <!-- NuGet Package Properties -->
     <PackageId>TechVeo.Shared.Infra</PackageId>
     <Version>1.0.0</Version>
-    <Authors>TechChallenge-Team</Authors>
-    <Company>TechChallenge</Company>
+    <Authors>FIAP-Hackathon-Team</Authors>
+    <Company>FIAP-Hackathon-Team</Company>
     <Description>TechVeo Shared Infrastructure - Persistência, consistência eventual e extensões de infraestrutura compartilhadas</Description>
     <PackageTags>TechVeo;infrastructure;entityframework;shared</PackageTags>
-    <RepositoryUrl>https://github.com/TechChallenge-Team/TechVeo-shared</RepositoryUrl>
+    <RepositoryUrl>https://github.com/FIAP-Hackathon-Team/TechVeo-shared</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>

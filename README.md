@@ -1,6 +1,6 @@
 # 🍔 TechVeo Shared Libraries
 
-[![Build](https://github.com/TechChallenge-Team/techVeo-shared/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/TechChallenge-Team/techVeo-shared/actions/workflows/pipeline.yaml)
+[![Build](https://github.com/FIAP-Hackathon-Team/techVeo-shared/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/FIAP-Hackathon-Team/techVeo-shared/actions/workflows/pipeline.yaml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Biblioteca compartilhada de componentes reutilizáveis para o ecossistema TechVeo, distribuída como pacotes NuGet privados no GitHub Packages.
@@ -9,12 +9,12 @@ Biblioteca compartilhada de componentes reutilizáveis para o ecossistema TechVe
 
 Este repositório contém 4 pacotes NuGet:
 
-| Pacote                          | Descrição                                               | Versão                                                                                                         |
-| ------------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| **TechVeo.Shared.Domain**       | Entidades, enums, value objects e validações de domínio | [![NuGet](https://img.shields.io/badge/nuget-1.0.0-blue)](https://github.com/orgs/TechChallenge-Team/packages) |
-| **TechVeo.Shared.Application**  | Exceções, extensões e recursos de aplicação             | [![NuGet](https://img.shields.io/badge/nuget-1.0.0-blue)](https://github.com/orgs/TechChallenge-Team/packages) |
-| **TechVeo.Shared.Infra**        | Persistência, Entity Framework e consistência eventual  | [![NuGet](https://img.shields.io/badge/nuget-1.0.0-blue)](https://github.com/orgs/TechChallenge-Team/packages) |
-| **TechVeo.Shared.Presentation** | Filtros, extensões ASP.NET Core e configurações Swagger | [![NuGet](https://img.shields.io/badge/nuget-1.0.0-blue)](https://github.com/orgs/TechChallenge-Team/packages) |
+| Pacote                          | Descrição                                               | Versão                                                                                                          |
+| ------------------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **TechVeo.Shared.Domain**       | Entidades, enums, value objects e validações de domínio | [![NuGet](https://img.shields.io/badge/nuget-1.0.0-blue)](https://github.com/orgs/FIAP-Hackathon-Team/packages) |
+| **TechVeo.Shared.Application**  | Exceções, extensões e recursos de aplicação             | [![NuGet](https://img.shields.io/badge/nuget-1.0.0-blue)](https://github.com/orgs/FIAP-Hackathon-Team/packages) |
+| **TechVeo.Shared.Infra**        | Persistência, Entity Framework e consistência eventual  | [![NuGet](https://img.shields.io/badge/nuget-1.0.0-blue)](https://github.com/orgs/FIAP-Hackathon-Team/packages) |
+| **TechVeo.Shared.Presentation** | Filtros, extensões ASP.NET Core e configurações Swagger | [![NuGet](https://img.shields.io/badge/nuget-1.0.0-blue)](https://github.com/orgs/FIAP-Hackathon-Team/packages) |
 
 ## 🚀 Quick Start
 
@@ -22,7 +22,7 @@ Este repositório contém 4 pacotes NuGet:
 
 ```bash
 # Adicionar source do GitHub Packages
-dotnet nuget add source https://nuget.pkg.github.com/TechChallenge-Team/index.json \
+dotnet nuget add source https://nuget.pkg.github.com/FIAP-Hackathon-Team/index.json \
   --name github \
   --username SEU_USUARIO \
   --password SEU_TOKEN \
@@ -240,18 +240,18 @@ Este projeto está sob a licença MIT. Veja [LICENSE](LICENSE) para mais detalhe
 
 ## 🔗 Links Úteis
 
-- [GitHub Packages](https://github.com/orgs/TechChallenge-Team/packages)
-- [Pipeline Actions](https://github.com/TechChallenge-Team/techVeo-shared/actions)
-- [Releases](https://github.com/TechChallenge-Team/techVeo-shared/releases)
+- [GitHub Packages](https://github.com/orgs/FIAP-Hackathon-Team/packages)
+- [Pipeline Actions](https://github.com/FIAP-Hackathon-Team/techVeo-shared/actions)
+- [Releases](https://github.com/FIAP-Hackathon-Team/techVeo-shared/releases)
 
 ## 💬 Suporte
 
 Para questões ou problemas:
 
-- Abra uma [Issue](https://github.com/TechChallenge-Team/techVeo-shared/issues)
+- Abra uma [Issue](https://github.com/FIAP-Hackathon-Team/techVeo-shared/issues)
 - Consulte a [Documentação](./NUGET.md)
 - Entre em contato com a equipe
 
 ---
 
-Feito com ❤️ pela TechChallenge Team
+Feito com ❤️ pela FIAP-Hackathon-Team Team
