@@ -1,6 +1,6 @@
 using System;
 
-namespace TechVeo.Shared.Infra.Http;
+namespace TechVeo.Shared.Application.Http;
 
 public interface IServiceUrlProvider
 {

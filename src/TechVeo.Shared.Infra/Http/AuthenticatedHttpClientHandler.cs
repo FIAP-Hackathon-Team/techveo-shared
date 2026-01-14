@@ -2,6 +2,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
+using TechVeo.Shared.Application.Http;
 
 namespace TechVeo.Shared.Infra.Http
 {

@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
+using TechVeo.Shared.Application.Http;
 
 namespace TechVeo.Shared.Infra.Http
 {

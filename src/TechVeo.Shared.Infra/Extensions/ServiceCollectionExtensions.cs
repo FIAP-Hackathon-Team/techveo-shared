@@ -4,6 +4,7 @@ using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using TechVeo.Shared.Application.Events;
+using TechVeo.Shared.Application.Http;
 using TechVeo.Shared.Domain.Events;
 using TechVeo.Shared.Domain.UoW;
 using TechVeo.Shared.Infra.Events;

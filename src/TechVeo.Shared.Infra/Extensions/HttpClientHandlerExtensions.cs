@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using TechVeo.Shared.Application.Http;
 using TechVeo.Shared.Infra.Http;
 
 namespace Microsoft.Extensions.DependencyInjection

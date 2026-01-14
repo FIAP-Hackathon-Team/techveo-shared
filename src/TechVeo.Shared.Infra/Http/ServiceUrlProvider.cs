@@ -1,5 +1,6 @@
 using System;
 using Microsoft.Extensions.Configuration;
+using TechVeo.Shared.Application.Http;
 
 namespace TechVeo.Shared.Infra.Http;
 
