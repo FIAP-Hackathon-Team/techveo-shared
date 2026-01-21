@@ -3,7 +3,6 @@ using System.Linq;
 using Amazon.Runtime;
 using Amazon.S3;
 using MediatR;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using TechVeo.Shared.Application.Events;
@@ -22,15 +21,12 @@ namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddSharedInfra<DbContext>(this IServiceCollection services, InfraOptions? options = null) where DbContext : TechVeoContext
+    public static IServiceCollection AddSharedInfra<DbContext>(this IServiceCollection services, InfraOptions? options = null)
+         where DbContext : TechVeoContext
     {
-        options ??= new InfraOptions();
-
-        services.TryAddSingleton(Options.Options.Create(options));
-
         //Context
         services.TryAddScoped<DbContext>();
-        services.AddDbContext<DbContext>((sp, dbOptions) => options.DbContext?.Invoke(sp, dbOptions));
+        services.AddDbContext<DbContext>((sp, dbOptions) => options?.DbContext?.Invoke(sp, dbOptions));
 
         //UoW
         services.TryAddScoped<IUnitOfWorkTransaction, UnitOfWorkTransaction>();
@@ -38,6 +34,15 @@ public static class ServiceCollectionExtensions
 
         //DomainEvents
         services.TryAddScoped<IDomainEventStore>(sp => sp.GetRequiredService<DbContext>());
+
+        return services.AddSharedInfra(options);
+    }
+
+    public static IServiceCollection AddSharedInfra(this IServiceCollection services, InfraOptions? options = null)
+    {
+        options ??= new InfraOptions();
+
+        services.TryAddSingleton(Options.Options.Create(options));
 
         //MediatR
         services.AddMediatR(options.ApplicationAssembly);
@@ -72,14 +77,14 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IAmazonS3>(sp =>
         {
             var storageOptions = sp.GetRequiredService<IOptions<StorageOptions>>().Value;
-            
+
             if (storageOptions.S3 == null)
             {
                 throw new InvalidOperationException("Storage:S3 configuration section is missing. Please configure Storage:S3 in appsettings.json");
             }
-            
+
             var s3Options = storageOptions.S3;
-            
+
             var s3Config = new AmazonS3Config
             {
                 RegionEndpoint = Amazon.RegionEndpoint.GetBySystemName(s3Options.Region)

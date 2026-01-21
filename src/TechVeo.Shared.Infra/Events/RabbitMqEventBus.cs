@@ -11,7 +11,6 @@ using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using TechVeo.Shared.Application.Events;
-using TechVeo.Shared.Domain.UoW;
 
 namespace TechVeo.Shared.Infra.Events;
 
@@ -23,7 +22,7 @@ public class RabbitMqEventBus : IEventBus, IDisposable
     private readonly IModel _channel;
     private readonly IServiceProvider _serviceProvider;
 
-    private const string ExchangeName = "TechVeo.events.exchange";
+    private const string ExchangeName = "techveo.events.exchange";
 
     public RabbitMqEventBus(
         ILogger<RabbitMqEventBus> logger,
@@ -97,13 +96,8 @@ public class RabbitMqEventBus : IEventBus, IDisposable
                 using var scope = _serviceProvider.CreateScope();
                 var scopedMediator = scope.ServiceProvider.GetRequiredKeyedService<IMediator>(EventualConsistency.Mediator.ServiceKey);
 
-                // Process the message
+                // Process the message - SaveChangesNotificationHandler will commit automatically
                 await scopedMediator.Publish(message!, CancellationToken.None);
-
-                var transaction = scope.ServiceProvider.GetRequiredService<IUnitOfWorkTransaction>();
-
-                // Commit the transaction if everything is successful
-                await transaction.CommitAsync();
 
                 // Manually acknowledge the message only after successful processing
                 _channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
