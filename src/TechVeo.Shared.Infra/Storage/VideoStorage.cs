@@ -2,18 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using TechVeo.Shared.Application.Storage;
 
 namespace TechVeo.Shared.Infra.Storage;
 
-public class VideoStorageHelper
+public class VideoStorage : IVideoStorage
 {
     private readonly IStorageService _storageService;
 
-    public VideoStorageHelper(IStorageService storageService)
+    public VideoStorage(IStorageService storageService)
     {
         _storageService = storageService;
     }

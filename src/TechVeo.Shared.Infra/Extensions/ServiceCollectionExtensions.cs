@@ -106,7 +106,7 @@ public static class ServiceCollectionExtensions
         });
 
         services.AddScoped<IStorageService, S3StorageService>();
-        services.AddScoped<VideoStorageHelper>();
+        services.AddScoped<IVideoStorage, VideoStorage>();
 
         return services;
     }
