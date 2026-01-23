@@ -76,8 +76,8 @@ public static class ServiceCollectionExtensions
                         ValidateAudience = true,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
-                        ValidIssuer = "TechVeo-jwts",
-                        ValidAudience = "TechVeo",
+                        ValidIssuer = "techveo-jwts",
+                        ValidAudience = "techveo",
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Authentication:Jwt:Key"]!)),
                     };
                 });
