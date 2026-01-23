@@ -9,10 +9,10 @@ public static class ClaimsPrincipalExtensions
 {
     public static Guid GetUserId(this ClaimsPrincipal principal)
     {
-        var subClaim = principal.FindFirstValue(JwtRegisteredClaimNames.Sub);
-        if (subClaim != null)
+        var claimValue = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (claimValue != null)
         {
-            if (Guid.TryParse(subClaim, out var userId))
+            if (Guid.TryParse(claimValue, out var userId))
             {
                 return userId;
             }
