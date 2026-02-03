@@ -5,6 +5,7 @@ using Amazon.S3;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
+using TechVeo.Shared.Application.Aws;
 using TechVeo.Shared.Application.Events;
 using TechVeo.Shared.Application.Http;
 using TechVeo.Shared.Application.Storage;
@@ -74,9 +75,12 @@ public static class ServiceCollectionExtensions
         //Storage
         services.AddOptions<StorageOptions>().BindConfiguration(StorageOptions.SectionName);
 
+        services.AddOptions<AwsOptions>().BindConfiguration(AwsOptions.SectionName);
+
         services.AddSingleton<IAmazonS3>(sp =>
         {
             var storageOptions = sp.GetRequiredService<IOptions<StorageOptions>>().Value;
+            var awsOptions = sp.GetRequiredService<IOptions<AwsOptions>>().Value;
 
             if (storageOptions.S3 == null)
             {
@@ -85,9 +89,11 @@ public static class ServiceCollectionExtensions
 
             var s3Options = storageOptions.S3;
 
+            var region = awsOptions.Region ?? "us-east-1";
+
             var s3Config = new AmazonS3Config
             {
-                RegionEndpoint = Amazon.RegionEndpoint.GetBySystemName(s3Options.Region)
+                RegionEndpoint = Amazon.RegionEndpoint.GetBySystemName(region)
             };
 
             if (!string.IsNullOrEmpty(s3Options.ServiceUrl))
@@ -96,9 +102,9 @@ public static class ServiceCollectionExtensions
                 s3Config.ForcePathStyle = s3Options.ForcePathStyle;
             }
 
-            if (!string.IsNullOrEmpty(s3Options.AccessKey) && !string.IsNullOrEmpty(s3Options.SecretKey))
+            if (!string.IsNullOrEmpty(awsOptions.AccessKey) && !string.IsNullOrEmpty(awsOptions.SecretKey))
             {
-                var credentials = new BasicAWSCredentials(s3Options.AccessKey, s3Options.SecretKey);
+                var credentials = new BasicAWSCredentials(awsOptions.AccessKey, awsOptions.SecretKey);
                 return new AmazonS3Client(credentials, s3Config);
             }
 

@@ -16,7 +16,8 @@ public class S3StorageService : IStorageService
     private readonly IAmazonS3 _s3Client;
     private readonly S3Options _options;
 
-    public S3StorageService(IAmazonS3 s3Client, IOptions<StorageOptions> options)
+    public S3StorageService(
+        IAmazonS3 s3Client, IOptions<StorageOptions> options)
     {
         _s3Client = s3Client;
         _options = options.Value.S3 ?? throw new InvalidOperationException("S3 options not configured");
