@@ -104,7 +104,7 @@ public static class ServiceCollectionExtensions
 
             if (!string.IsNullOrEmpty(awsOptions.AccessKey) && !string.IsNullOrEmpty(awsOptions.SecretKey))
             {
-                var credentials = new BasicAWSCredentials(awsOptions.AccessKey, awsOptions.SecretKey);
+                var credentials = new SessionAWSCredentials(awsOptions.AccessKey, awsOptions.SecretKey, awsOptions.SessionToken);
                 return new AmazonS3Client(credentials, s3Config);
             }
 
