@@ -14,6 +14,7 @@ using TechVeo.Shared.Domain.UoW;
 using TechVeo.Shared.Infra.Events;
 using TechVeo.Shared.Infra.Extensions;
 using TechVeo.Shared.Infra.Http;
+using TechVeo.Shared.Infra.Persistence.Behaviors;
 using TechVeo.Shared.Infra.Persistence.Contexts;
 using TechVeo.Shared.Infra.Persistence.UoW;
 using TechVeo.Shared.Infra.Storage;
@@ -57,6 +58,10 @@ public static class ServiceCollectionExtensions
                 TechVeo.Shared.Infra.EventualConsistency.Mediator.ServiceKey,
                 mediatR.ImplementationType!,
                 mediatR.Lifetime));
+
+        // Register SaveChanges handler for all notifications (runs LAST to commit changes)
+        // Uses IUnitOfWork abstraction - already registered above as DbContext
+        services.AddScoped(typeof(INotificationHandler<>), typeof(SaveChangesNotificationHandler<>));
 
         //EventBus
         services.TryAddSingleton<IEventBus, RabbitMqEventBus>();
